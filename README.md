@@ -2,6 +2,7 @@
 
 [![PyPI - Version](https://img.shields.io/pypi/v/my-arithmetic-dehou-yasmine.svg)](https://pypi.org/project/my-arithmetic-dehou-yasmine)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/my-arithmetic-dehou-yasmine.svg)](https://pypi.org/project/my-arithmetic-dehou-yasmine)
+[![coverage](https://gitlab.univ-lr.fr/groupe-4-projet-initiale/my-arithmetic-dehou-yasmine/badges/main/coverage.svg?job=coverage)]()
 
 -----
 
