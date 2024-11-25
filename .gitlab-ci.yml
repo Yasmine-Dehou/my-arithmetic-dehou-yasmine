@@ -33,9 +33,9 @@ deploy:
     - hatch build
     - mkdir -p artifacts
     - cp dist/* artifacts/
-    artifacts:
-      paths:
-      - artifacts/
+  artifacts:
+    paths:
+    - artifacts/
   after_script:
     - echo "Deployment finished."
     - rm -rf dist
