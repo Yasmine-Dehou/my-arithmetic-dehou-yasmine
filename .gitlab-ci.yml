@@ -19,6 +19,7 @@ build:
     - ls -l dist/
     - mkdir -p artifacts
     - cp -r dist/ artifacts/
+    - rm -rf dist/
   artifacts:
     paths:
       - artifacts/
@@ -49,6 +50,7 @@ deploy:
     - ls -l dist/
     - mkdir -p artifacts
     - cp -r dist/ artifacts/
+    - rm -rf dist/
   artifacts:
     paths:
     - artifacts/
