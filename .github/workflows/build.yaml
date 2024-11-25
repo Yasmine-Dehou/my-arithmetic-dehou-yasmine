@@ -1,0 +1,37 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install Hatch
+        run: pip install hatch hatch-vcs
+
+      - name: Build project
+        run: |
+          echo "my_arithmetic-dehou-yasmine deployment on develop servers"
+          hatch build
+          ls -l dist/
+          mkdir -p artifacts
+          cp -r dist/ artifacts/
+          rm -rf dist/
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifacts
+          path: artifacts/

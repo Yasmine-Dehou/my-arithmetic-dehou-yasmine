@@ -1,0 +1,43 @@
+name: Deploy
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install Hatch
+        run: pip install hatch hatch-vcs
+
+      - name: Build project
+        run: hatch build
+
+      - name: List dist directory
+        run: ls -l dist/
+
+      - name: Create artifacts directory
+        run: mkdir -p artifacts
+
+      - name: Copy build artifacts
+        run: cp -r dist/ artifacts/
+
+      - name: Clean up dist directory
+        run: rm -rf dist/
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifacts
+          path: artifacts/
