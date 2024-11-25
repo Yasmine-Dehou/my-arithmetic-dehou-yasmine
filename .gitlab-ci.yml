@@ -68,4 +68,4 @@ sync-with-github:
     - git status
     - git push https://root:$ACCESS_TOKEN@$CI_SERVER_HOST/$CI_PROJECT_PATH.git HEAD:main
   rules:
-    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
