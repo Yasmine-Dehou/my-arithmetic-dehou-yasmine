@@ -14,7 +14,7 @@ test:
   script:
     - hatch test
 
-test_coverage:
+coverage:
   stage: test
   script:
     - hatch test --cover
