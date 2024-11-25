@@ -21,3 +21,7 @@ class TestPGCD(unittest.TestCase):
     def test_gcd_negative_and_positive_numbers(self):
         self.assertEqual(pgcd(-48, 18), 6)
         self.assertEqual(pgcd(48, -18), 6)
+
+    def test_gcd_negative_and_zero(self):
+        self.assertEqual(pgcd(-48, 0), 48)
+        self.assertEqual(pgcd(0, -18), 18)
