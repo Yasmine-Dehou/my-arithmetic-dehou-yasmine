@@ -36,9 +36,5 @@ deploy:
   artifacts:
     paths:
     - artifacts/
-  after_script:
-    - echo "Deployment finished."
-    - rm -rf dist
-    - rm -rf artifacts
   only:
   - tags
