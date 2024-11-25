@@ -1,0 +1,22 @@
+stages:
+  - test
+  - coverage
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+image: python:3.9
+
+before_script:
+  - pip install hatch hatch-vcs
+
+test:
+  stage: test
+  script:
+    - hatch test
+
+test_coverage:
+  stage: coverage
+  script:
+    - hatch test --cover
+  coverage: '/TOTAL.+?(\d+\.\d+)/'
