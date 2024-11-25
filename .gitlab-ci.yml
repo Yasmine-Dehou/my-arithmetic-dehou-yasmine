@@ -17,9 +17,11 @@ build:
     - echo "my_arithmetic-dehou-yasmine deployment on develop servers"
     - hatch build
     - ls -l dist/
+    - mkdir -p artifacts
+    - cp -r dist/ artifacts/
   artifacts:
     paths:
-      - dist/
+      - artifacts/
   rules:
     - if: '$CI_COMMIT_BRANCH == "develop"'
 
@@ -45,8 +47,10 @@ deploy:
     - echo "my_arithmetic-dehou-yasmine deployment on stable servers
     - hatch build
     - ls -l dist/
+    - mkdir -p artifacts
+    - cp -r dist/ artifacts/
   artifacts:
     paths:
-    - dist/
+    - artifacts/
   only:
   - tags
