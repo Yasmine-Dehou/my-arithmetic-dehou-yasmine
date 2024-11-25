@@ -73,6 +73,7 @@ sync-with-github:
         git pull github main;
       else
         git checkout -b main;
+        git push -u github main;
       fi
     - git status
     - git push $REMOTE_REPOSITORY_URL HEAD:main
