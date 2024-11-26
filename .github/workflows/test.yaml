@@ -61,8 +61,8 @@ jobs:
         pattern: coverage
         merge-multiple: true
 
-    - name: Combine coverage data
-      run: hatch run coverage:combine
+#    - name: Combine coverage data
+#      run: hatch run coverage:combine
 
     - name: Export coverage reports
       run: |
