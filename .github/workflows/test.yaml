@@ -74,10 +74,3 @@ jobs:
       with:
         name: uncovered-html-report
         path: htmlcov
-
-    - name: Generate coverage summary
-      run: hatch run coverage:generate-summary
-
-    - name: Write coverage summary report
-      if: github.event_name == 'pull_request'
-      run: hatch run coverage:write-summary-report
