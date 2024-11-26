@@ -75,14 +75,9 @@ jobs:
         name: uncovered-html-report
         path: htmlcov
     
-    - name: Report combined coverage report to Coveralls
+    - name: Coveralls
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         pip3 install coveralls
         coveralls --service=github
-
-    - name: Coveralls
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
