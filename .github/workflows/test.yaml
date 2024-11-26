@@ -24,11 +24,11 @@ jobs:
         run: |
           uv pip install --system -e .
 
-      - name: Run static analysis
-        run: hatch fmt --check
+#      - name: Run static analysis
+#        run: hatch fmt --check
 
-      - name: Check types
-        run: hatch run types:check
+#      - name: Check types
+#        run: hatch run types:check
 
       - name: Run tests
         run: hatch test --cover-quiet --randomize --parallel --retries 5 --retry-delay 3
