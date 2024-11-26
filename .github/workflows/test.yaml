@@ -35,7 +35,9 @@ jobs:
         run: pip install hatch hatch-vcs
 
       - name: Run tests with coverage
-        run: hatch test --cover
+        run: |
+          hatch test --cover
+          coverage lcov -o coverage/lcov.info
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
