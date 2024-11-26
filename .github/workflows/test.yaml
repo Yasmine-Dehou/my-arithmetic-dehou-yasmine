@@ -37,6 +37,11 @@ jobs:
       - name: Run tests with coverage
         run: hatch test --cover
 
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Upload coverage report
         uses: actions/upload-artifact@v2
         with:
