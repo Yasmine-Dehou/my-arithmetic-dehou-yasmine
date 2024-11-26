@@ -74,3 +74,8 @@ jobs:
       with:
         name: uncovered-html-report
         path: htmlcov
+    
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
